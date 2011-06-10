@@ -106,9 +106,9 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 .clearfix { zoom: 1; }
 .clear { clear: both;}
 
-#honoreeTool #containerWrapper { background: #f9f9f0 url(images/border_bottom.png) left bottom no-repeat; width: 580px; padding-bottom: 3px; max-height: 600px;}
-#honoreeTool #container { background: url(images/border_top.png) top left no-repeat; }
-#honoreeTool #mainFilter { font-family: Georgia, "Times New Roman", Times, serif; font-size: 110%; padding: 15px; background: url(images/bg_filter.png) left bottom repeat-x;}
+#honoreeTool #containerWrapper { background: #f9f9f0 url('../images/border_bottom.png') left bottom no-repeat; width: 580px; padding-bottom: 3px; max-height: 600px;}
+#honoreeTool #container { background: url('../images/border_top.png') top left no-repeat; }
+#honoreeTool #mainFilter { font-family: Georgia, "Times New Roman", Times, serif; font-size: 110%; padding: 15px; background: url('../images/bg_filter.png') left bottom repeat-x;}
 #honoreeTool #mainFilter #filterTitle { float: left; color: #4a4244; text-transform: uppercase; }
 #honoreeTool #mainFilter li { float: left; margin-left: 20px;}
 
@@ -120,7 +120,7 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 #honoreeTool ol #titleList { border-bottom: 1px solid #b4b4b3; background-color: transparent; }
 #honoreeTool ol { margin: 5px 10px 20px; list-style-type: none; border-top: 1px solid #b4b4b3; border-bottom: 1px solid #b4b4b3; }
 #honoreeTool ol li { border-bottom: 1px dashed #f2f2f2; background-color: #fff; border-right: 1px solid #f0f2f2; border-left: 1px solid #f0f2f2;}
-#honoreeTool ol li:hover, #honoreeTool ol li.active { background: #ecf3f4 url(images/bg_gradient.png) bottom left repeat-x; }
+#honoreeTool ol li:hover, #honoreeTool ol li.active { background: #ecf3f4 url('../images/bg_gradient.png') bottom left repeat-x; }
 
 #honoreeTool .expandColumn { width: 20px; padding: 0; float: left;}
 #honoreeTool .amountColumn { float: left; width: 325px;}
@@ -134,32 +134,34 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 #honoreeTool .totalMoney { color: #7b9d3a; font-weight: bold; display: block;}
 #honoreeTool .numberPayments { color: #9ea57f; font-size: 85%;}
 
-#honoreeTool .expand { text-indent: -9999em; display: block; width: 10px; height: 10px; background: url(images/btn_expand.png) top left no-repeat; margin: 10px;}
-#honoreeTool .active a.expand{ background: url(images/btn_expand.png) bottom left no-repeat;}
+#honoreeTool .expand { text-indent: -9999em; display: block; width: 10px; height: 10px; background: url('../images/btn_expand.png') top left no-repeat; margin: 10px;}
+#honoreeTool .active a.expand{ background: url('../images/btn_expand.png') bottom left no-repeat;}
 
 #honoreeTool .odd { background-color: #fff; border: 1px solid #E8E8E8;}
 
 #honoreeTool .radio, #honoreeTool .checkbox { margin-right: 10px; margin-top: 2px; display: block; float: left;}
 #honoreeTool #filterBtn { text-align: right; display: block;}
 
-#honoreeTool .tagValue { background: url(images/bg_bar.jpg) left top repeat-x; float: left; display: block; height: 35px; margin-right: 5px; text-indent: -9999em; border: 1px solid #98c43e; max-width: 235px;}
+#honoreeTool .tagValue { background: url('../images/bg_bar.jpg') left top repeat-x; float: left; display: block; height: 35px; margin-right: 5px; text-indent: -9999em; border: 1px solid #98c43e; max-width: 235px;}
 #honoreeTool .moneyMetaData { float: left; line-height: 14px; margin-top: 4px; }
 
 #honoreeTool .honoreeMetaData { color: #9c9a98; font-family: Georgia, "Times New Roman", Times, serif; font-style: oblique; font-size: 90%;}
 
 #honoreeTool .buttonLink { text-indent: -9999em; display: block; cursor: pointer;}
-#honoreeTool #csvDownload { background: url(images/btn_download.png) left top no-repeat; width: 99px; height: 21px; float: right; margin-top: 15px; margin-right: 10px;}
-#honoreeTool #csvDownload:hover { background: url(images/btn_download.png) left bottom no-repeat; }
+#honoreeTool #csvDownload { background: url('../images/btn_download.png') left top no-repeat; width: 99px; height: 21px; float: right; margin-top: 15px; margin-right: 10px;}
+#honoreeTool #csvDownload:hover { background: url('../images/btn_download.png') left bottom no-repeat; }
 
-#honoreeTool .dropdownTable { background-color: #f3f7f8; font-size: 95%; border-top: 1px solid #e2e9ea;}
+#honoreeTool .dropdownTable { background-color: #f3f7f8; font-size: 95%; border-top: 1px solid #e2e9ea; display: none; }
 #honoreeTool table { margin: 15px 25px; width: 500px;}
 #honoreeTool th { text-align: left; padding: 0 0 3px 5px; border-bottom: 1px solid #b4b4b3; font-weight: normal;}
 #honoreeTool td { padding: 5px; color: #918f8e;}
 
-#honoreeTool #mainAmountTable { overflow: auto; height: 472px; }
+#honoreeTool .mainAmountTable { overflow: auto; height: 472px; display: none; }
+
+.loading { background: url('/media/images/loading.gif') center center };
 
 .filterDropdown span { color: #4A4244; margin-bottom: 8px; display: block; font-style: oblique;}
-.filterDropdown { position: absolute; background: #f7f7ef url("images/bg_filter.png") left bottom repeat-x; border-bottom: 2px solid #92928d; border-top: 1px solid #babab4; font-size: 95%; padding: 5px 15px 10px; width: 550px; margin-top: 15px; left: 0;}
+.filterDropdown { position: absolute; background: #f7f7ef url('../images/bg_filter.png') left bottom repeat-x; border-bottom: 2px solid #92928d; border-top: 1px solid #babab4; font-size: 95%; padding: 5px 15px 10px; width: 550px; margin-top: 15px; left: 0; display: none; }
 #honoreeTool #honoreeFilter li, #honoreeTool #registrantFilter li { margin-left: 0px;}
 .filterDropdown label { display: block; margin-bottom: 5px; }
 #typeFilter label { width: 170px;  }
@@ -171,8 +173,8 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 input { -moz-border-radius: 3px; -webkit-border-radius: 3px; border: 1px solid #eaeae7; padding: 3px;}
 
 #registrantFilter label { display: inline; margin-right: 10px;}
-.btnFilter { background: url(images/btn_filter.png) top left no-repeat; width: 57px; height: 21px;}
-.btnFilter:hover { background: url(images/btn_filter.png) bottom left no-repeat; }
+.btnFilter { background: url('../images/btn_filter.png') top left no-repeat; width: 57px; height: 21px;}
+.btnFilter:hover { background: url('../images/btn_filter.png') bottom left no-repeat; }
 
 #honoreeFilter .btnFilter { margin-top: 15px;}
 #registrantFilter .btnFilter { margin-top: 1px;}

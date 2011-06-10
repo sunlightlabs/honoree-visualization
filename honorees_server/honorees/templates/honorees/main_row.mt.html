@@ -1,0 +1,20 @@
+<li class="clear">
+    <a class="expand expandColumn" href="#">Expand</a>
+    <div class="lawmakerColumn">
+        <span class="honoreeName"><%=name%></span>
+        <div class="honoreeMetaData">
+            <span class="dem">(D)</span>
+            <span>MA</span>
+        </div>
+    </div>
+    <div class="amountColumn">
+        <span class="tagValue" style="width:<%=Math.round(100*(total_contributions/most))%>%;">30%</span>
+        <div class="moneyMetaData">
+            <span class="totalMoney">$<%=formatDollars(total_contributions)%></span>
+            <span class="numberPayments">(<%=contribution_count%> payments)</span>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="dropdownTable"></div>
+</li>

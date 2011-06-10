@@ -9,8 +9,9 @@
     <meta name="description" content="">
 
     <title></title>
-    <link rel="stylesheet" href="honoree.css" type="text/css" media="screen" />
-    <!--[if IE 7]>{% css "styles/buggy_7.css" %}<![endif]-->
+    <link rel="stylesheet" href="/media/css/honoree.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/honorees.js"></script>
 </head>
 <body id="honoreeTool">
     <div id="containerWrapper">
@@ -19,10 +20,10 @@
                 <span id="filterTitle">View Money by</span>
                 <ul>
                     <li>
-                        <label><input class="radio" type="radio" name="word" />Honoree</label>
+                        <label><input class="radio view-by" type="radio" name="view-by" value='honoree' />Honoree</label>
                     </li>
                     <li>
-                        <label><input class="radio" type="radio" name="word" />Lobbying Entity</label>
+                        <label><input class="radio view-by" type="radio" name="view-by" value='registrant' />Lobbying Entity</label>
                     </li>
                 </ul>
                 <a id="filterBtn" href="#">Filter</a>
@@ -61,7 +62,7 @@
                     </ul>
                     <div class="clear"></div>    
                 </div>
-                <!--<div class="filterDropdown" id="registrantFilter">
+                <div class="filterDropdown" id="registrantFilter">
                     <span>Narrow down your results by:</span>
                     <ul>
                         <li class="nameFilter">
@@ -75,7 +76,7 @@
                         </li>    
                     </ul>
                     <div class="clear"></div>    
-                </div>-->
+                </div>
             </div>
             <a class="buttonLink" id="csvDownload" href="#">Download CSV</a>
             <div class="clear"></div>
@@ -84,264 +85,8 @@
                 <h3>Amount</h3>
                 <div class="clear"></div>
             </div>
-            <ol id="mainAmountTable">   
-                <li class="clear">
-                    <a class="expand expandColumn column" href="#">Expand</a>
-                    <div class="lawmakerColumn column">
-                        <span class="honoreeName">Lawmaker Name</span>
-                        <div class="honoreeMetaData">
-                            <span class="dem">(D)</span>
-                            <span>MA</span>
-                        </div>
-                    </div>
-                    <div class="amountColumn">
-                        <span class="tagValue" style="width:100%;">100%</span>
-                        <div class="moneyMetaData">
-                            <span class="totalMoney">$5,967,542</span>
-                            <span class="numberPayments">(40 payments)</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="clear"></div>
-                </li> 
-                <li class="clear">
-                    <a class="expand expandColumn" href="#">Expand</a>
-                    <div class="lawmakerColumn">
-                        <span class="honoreeName">Lawmaker Name</span>
-                        <div class="honoreeMetaData">
-                            <span class="dem">(D)</span>
-                            <span>MA</span>
-                        </div>
-                    </div>
-                    <div class="amountColumn">
-                        <span class="tagValue" style="width:40%;">40%</span>
-                        <div class="moneyMetaData">
-                            <span class="totalMoney">$5,967,542</span>
-                            <span class="numberPayments">(40 payments)</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="clear"></div>
-                </li>    
-                <li class="clear active">
-                    <a class="expand expandColumn" href="#">Expand</a>
-                    <div class="lawmakerColumn">
-                        <span class="honoreeName">Lawmaker Name</span>
-                        <div class="honoreeMetaData">
-                            <span class="dem">(D)</span>
-                            <span>MA</span>
-                        </div>
-                    </div>
-                    <div class="amountColumn">
-                        <span class="tagValue" style="width:30%;">30%</span>
-                        <div class="moneyMetaData">
-                            <span class="totalMoney">$5,967,542</span>
-                            <span class="numberPayments">(40 payments)</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="dropdownTable">
-                        <table>
-                            <thead>
-                                <tr id="titles">
-    								<th>Donor</th>
-    								<th>Payee</th>
-    								<th>Amount</th>
-    								<th>Date</th>
-    							</tr>
-                            </thead>
-                            <tbody>
-                                <tr class="odd">
-                                    <td>Donor Name</td> 
-                                    <td>Payee Name</td>     
-                                    <td>$3,000,000</td> 
-                                    <td>2/12/08</td> 
-                                </tr>
-                                <tr class="even">
-                                    <td>Donor Name</td> 
-                                    <td>Payee Name</td>     
-                                    <td>$3,000,000</td> 
-                                    <td>2/12/08</td> 
-                                </tr>
-                                <tr class="odd">
-                                    <td>Donor Name</td> 
-                                    <td>Payee Name</td>     
-                                    <td>$3,000,000</td> 
-                                    <td>2/12/08</td> 
-                                </tr>
-                            </tbody>        
-                        </table>    
-                    </div> 
-                    <!-- for registrants
-                    <div class="dropdownTable">
-                        <table>
-                            <thead>
-                                <tr id="titles">
-    								<th>Honoree</th>
-    								<th>Payee</th>
-    								<th>Amount</th>
-    								<th>Date</th>
-    							</tr>
-                            </thead>
-                            <tbody>
-                                <tr class="odd">
-                                    <td>Honoree Name</td> 
-                                    <td>Payee Name</td>     
-                                    <td>$3,000,000</td> 
-                                    <td>2/12/08</td> 
-                                </tr>
-                                <tr class="even">
-                                    <td>Honoree Name</td> 
-                                    <td>Payee Name</td>     
-                                    <td>$3,000,000</td> 
-                                    <td>2/12/08</td> 
-                                </tr>
-                                <tr class="odd">
-                                    <td>Honoree Name</td> 
-                                    <td>Payee Name</td>     
-                                    <td>$3,000,000</td> 
-                                    <td>2/12/08</td> 
-                                </tr>
-                            </tbody>        
-                        </table>    
-                    </div>--> 
-                </li>
-                <li class="clear">
-                    <a class="expand expandColumn" href="#">Expand</a>
-                    <div class="lawmakerColumn">
-                        <span class="honoreeName">Lawmaker Name</span>
-                        <div class="honoreeMetaData">
-                            <span class="dem">(D)</span>
-                            <span>MA</span>
-                        </div>
-                    </div>
-                    <div class="amountColumn">
-                        <span class="tagValue" style="width:40%;">40%</span>
-                        <div class="moneyMetaData">
-                            <span class="totalMoney">$5,967,542</span>
-                            <span class="numberPayments">(40 payments)</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="clear"></div>
-                </li>
-                <li class="clear">
-                    <a class="expand expandColumn" href="#">Expand</a>
-                    <div class="lawmakerColumn">
-                        <span class="honoreeName">Lawmaker Name</span>
-                        <div class="honoreeMetaData">
-                            <span class="dem">(D)</span>
-                            <span>MA</span>
-                        </div>
-                    </div>
-                    <div class="amountColumn">
-                        <span class="tagValue" style="width:40%;">40%</span>
-                        <div class="moneyMetaData">
-                            <span class="totalMoney">$5,967,542</span>
-                            <span class="numberPayments">(40 payments)</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="clear"></div>
-                </li>
-                <li class="clear">
-                    <a class="expand expandColumn" href="#">Expand</a>
-                    <div class="lawmakerColumn">
-                        <span class="honoreeName">Lawmaker Name</span>
-                        <div class="honoreeMetaData">
-                            <span class="dem">(D)</span>
-                            <span>MA</span>
-                        </div>
-                    </div>
-                    <div class="amountColumn">
-                        <span class="tagValue" style="width:40%;">40%</span>
-                        <div class="moneyMetaData">
-                            <span class="totalMoney">$5,967,542</span>
-                            <span class="numberPayments">(40 payments)</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="clear"></div>
-                </li>
-                <li class="clear">
-                    <a class="expand expandColumn" href="#">Expand</a>
-                    <div class="lawmakerColumn">
-                        <span class="honoreeName">Lawmaker Name</span>
-                        <div class="honoreeMetaData">
-                            <span class="dem">(D)</span>
-                            <span>MA</span>
-                        </div>
-                    </div>
-                    <div class="amountColumn">
-                        <span class="tagValue" style="width:40%;">40%</span>
-                        <div class="moneyMetaData">
-                            <span class="totalMoney">$5,967,542</span>
-                            <span class="numberPayments">(40 payments)</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="clear"></div>
-                </li>
-                <li class="clear">
-                    <a class="expand expandColumn" href="#">Expand</a>
-                    <div class="lawmakerColumn">
-                        <span class="honoreeName">Lawmaker Name</span>
-                        <div class="honoreeMetaData">
-                            <span class="dem">(D)</span>
-                            <span>MA</span>
-                        </div>
-                    </div>
-                    <div class="amountColumn">
-                        <span class="tagValue" style="width:35%;">35%</span>
-                        <div class="moneyMetaData">
-                            <span class="totalMoney">$5,967,542</span>
-                            <span class="numberPayments">(40 payments)</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="clear"></div>
-                </li>
-                <li class="clear">
-                    <a class="expand expandColumn" href="#">Expand</a>
-                    <div class="lawmakerColumn">
-                        <span class="honoreeName">Lawmaker Name</span>
-                        <div class="honoreeMetaData">
-                            <span class="dem">(D)</span>
-                            <span>MA</span>
-                        </div>
-                    </div>
-                    <div class="amountColumn">
-                        <span class="tagValue" style="width:30%;">30%</span>
-                        <div class="moneyMetaData">
-                            <span class="totalMoney">$5,967,542</span>
-                            <span class="numberPayments">(40 payments)</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="clear"></div>
-                </li>
-                <li class="clear">
-                    <a class="expand expandColumn" href="#">Expand</a>
-                    <div class="lawmakerColumn">
-                        <span class="honoreeName">Lawmaker Name</span>
-                        <div class="honoreeMetaData">
-                            <span class="dem">(D)</span>
-                            <span>MA</span>
-                        </div>
-                    </div>
-                    <div class="amountColumn">
-                        <span class="tagValue" style="width:20%;">20%</span>
-                        <div class="moneyMetaData">
-                            <span class="totalMoney">$5,967,542</span>
-                            <span class="numberPayments">(40 payments)</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="clear"></div>
-                </li>
-            
-            </ol>
+            <ol class="mainAmountTable" id="honoree-table"></ol>
+			<ol class="mainAmountTable" id="registrant-table"></ol>
         </div>
     </div>
 </body>
