@@ -26,7 +26,8 @@ class Command(BaseCommand):
             
             honoree_data = {
                 'name': row['separate_honoree'],
-                'category': row['category_separate_honoree']
+                'category': row['separate_honoree_category'],
+                'employer': row['Staffer_employer']
             }
             
             honoree, created = Honoree.objects.get_or_create(**honoree_data)
@@ -39,17 +40,20 @@ class Command(BaseCommand):
                 'lobbyist_name': row['lobbyistname'],
                 'contribution_type': row['contributiontype'],
                 'original_honoree_description': row['honoree_LD203form'],
-                'sanitized_honoree_description': row['honoree_cleanedup'],
                 'payee': row['payee'],
                 'amount': row['amount'],
-                'contribution_date': datetime.datetime.strptime(row['received'], '%m/%d/%y').date(),
+                'contribution_date': datetime.datetime.strptime(row['contributiondate'], '%m/%d/%y').date(),
                 'comments': row['comments'],
+            }
+            contribution_default_data = {
+                'sanitized_honoree_description': row['honoree_cleanedup']
             }
             
             # only attempt to reuse contribution record if there's more than one honoree
-            if ',' in contribution_data['sanitized_honoree_description']:
-                contribution, created = Contribution.objects.get_or_create(**contribution_data)
+            if ',' in contribution_default_data['sanitized_honoree_description']:
+                contribution, created = Contribution.objects.get_or_create(defaults=contribution_default_data, **contribution_data)
             else:
+                contribution_data.update(contribution_default_data)
                 contribution = Contribution(**contribution_data)
                 contribution.save()
             

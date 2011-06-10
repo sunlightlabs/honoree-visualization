@@ -10,6 +10,7 @@ class Registrant(models.Model):
 class Honoree(models.Model):
     name = models.CharField(max_length=255)
     category = models.CharField(max_length=255, blank=True)
+    employer = models.CharField(max_length=255, blank=True, null=True)
     
     def __str__(self):
         return self.name
