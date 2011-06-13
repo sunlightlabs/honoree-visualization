@@ -151,14 +151,14 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 #honoreeTool #csvDownload { background: url('../images/btn_download.png') left top no-repeat; width: 99px; height: 21px; float: right; margin-top: 15px; margin-right: 10px;}
 #honoreeTool #csvDownload:hover { background: url('../images/btn_download.png') left bottom no-repeat; }
 
-#honoreeTool .dropdownTable { background-color: #f3f7f8; font-size: 95%; border-top: 1px solid #e2e9ea; display: none; }
+#honoreeTool .dropdownTable { background-color: #f3f7f8; font-size: 95%; border-top: 1px solid #e2e9ea; min-height: 50px; display: none; }
 #honoreeTool table { margin: 15px 25px; width: 500px;}
 #honoreeTool th { text-align: left; padding: 0 0 3px 5px; border-bottom: 1px solid #b4b4b3; font-weight: normal;}
 #honoreeTool td { padding: 5px; color: #918f8e;}
 
 #honoreeTool .mainAmountTable { overflow: auto; height: 472px; display: none; }
 
-.loading { background: url('/media/images/loading.gif') center center };
+.loading { background: url('/media/images/loading.gif') no-repeat center center };
 
 .filterDropdown span { color: #4A4244; margin-bottom: 8px; display: block; font-style: oblique;}
 .filterDropdown { position: absolute; background: #f7f7ef url('../images/bg_filter.png') left bottom repeat-x; border-bottom: 2px solid #92928d; border-top: 1px solid #babab4; font-size: 95%; padding: 5px 15px 10px; width: 550px; margin-top: 15px; left: 0; display: none; }

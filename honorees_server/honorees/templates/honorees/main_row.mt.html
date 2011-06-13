@@ -1,17 +1,19 @@
-<li class="clear">
+<li class="clear" data-db-id="<%=id%>" data-db-type="<%=type%>">
     <a class="expand expandColumn" href="#">Expand</a>
     <div class="lawmakerColumn">
         <span class="honoreeName"><%=name%></span>
+        <% if (typeof(party) !== "undefined" && typeof(state) !== "undefined" && party && state) { %>
         <div class="honoreeMetaData">
-            <span class="dem">(D)</span>
-            <span>MA</span>
+            <span class="<%=(party == 'D' ? 'dem' : 'rep')%>">(<%=party%>)</span>
+            <span><%=state%></span>
         </div>
+        <% } %>
     </div>
     <div class="amountColumn">
         <span class="tagValue" style="width:<%=Math.round(100*(total_contributions/most))%>%;">30%</span>
         <div class="moneyMetaData">
             <span class="totalMoney">$<%=formatDollars(total_contributions)%></span>
-            <span class="numberPayments">(<%=contribution_count%> payments)</span>
+            <span class="numberPayments">(<%=contribution_count + (contribution_count == 1 ? ' payment' : ' payments')%>)</span>
         </div>
         <div class="clear"></div>
     </div>

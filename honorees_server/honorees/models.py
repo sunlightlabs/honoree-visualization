@@ -3,6 +3,7 @@ from django.db import models
 class Registrant(models.Model):
     original_id = models.CharField(max_length=255, verbose_name="original ID")
     name = models.CharField(max_length=255)
+    standardized_name = models.CharField(max_length=255)
     
     def __str__(self):
         return self.name
@@ -11,6 +12,8 @@ class Honoree(models.Model):
     name = models.CharField(max_length=255)
     category = models.CharField(max_length=255, blank=True)
     employer = models.CharField(max_length=255, blank=True, null=True)
+    state = models.CharField(max_length=12, blank=True, default="")
+    party = models.CharField(max_length=12, blank=True, default="")
     
     def __str__(self):
         return self.name

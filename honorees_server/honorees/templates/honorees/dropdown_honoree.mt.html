@@ -8,23 +8,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr class="odd">
-            <td>Donor Name</td>
-            <td>Payee Name</td>
-            <td>$3,000,000</td>
-            <td>2/12/08</td>
+        <% for (var i = 0; i < data.length; i++) { %>
+        <tr class="<%=(i % 2 == 0 ? 'odd' : 'even')%>">
+            <td><%=data[i].registrant%></td>
+            <td><%=data[i].payee%></td>
+            <td>$<%=formatDollars(data[i].amount)%></td>
+            <td><%=data[i].date%></td>
         </tr>
-        <tr class="even">
-            <td>Donor Name</td>
-            <td>Payee Name</td>
-            <td>$3,000,000</td>
-            <td>2/12/08</td>
-        </tr>
-        <tr class="odd">
-            <td>Donor Name</td>
-            <td>Payee Name</td>
-            <td>$3,000,000</td>
-            <td>2/12/08</td>
-        </tr>
+        <% } %>
     </tbody>
 </table>    

@@ -60,6 +60,15 @@ $(function() {
         dropdown_registrant: _.template("{% filter escapejs %}{% spaceless %}{% include 'honorees/dropdown_registrant.mt.html' %}{% endspaceless %}{% endfilter %}")
     }
     
+    // select the right thing
+    $('.view-by[value=honoree]').attr('checked', true);
+    
+    //utility functions
+    var updateTitle = function(type, title, table) {
+        var count = table.find('li').length;
+        title.html(type.charAt(0).toUpperCase() + type.slice(1) + " <span class='tip'>" + (count == 0 ? "" : "(" + count + " Total)") + "</span>")
+    }
+    
     // events
     $('.view-by').change(function() {
         var toShow = $('input[name=view-by]:checked').val();
@@ -71,13 +80,51 @@ $(function() {
                 var most = data[0].total_contributions;
                 table.removeClass('loading');
                 $.each(data, function(idx, row) {
-                    table.append(templates.main_row($.extend({'most': most}, template_helpers, row)));
+                    table.append(templates.main_row($.extend({'most': most, 'type': toShow}, template_helpers, row)));
                 })
                 
+                updateTitle(toShow, $('#honoreeTitle'), table);
             });
         }
         
         $('ol').not('#' + toShow + '-table').hide();
         table.show();
+        
+        $('.filterDropdown').hide();
+        
+        updateTitle(toShow, $('#honoreeTitle'), table);
     })
+    
+    $('#container').delegate('.mainAmountTable a.expand', 'click', function() {
+        var $this = $(this);
+        var $parent = $this.parent();
+        if ($parent.hasClass('active')) {
+            $parent.removeClass('active');
+            $parent.find('.dropdownTable').hide();
+        } else {
+            $parent.addClass('active');
+            var $dropdown = $parent.find('.dropdownTable');
+            if ($dropdown.children().length == 0) {
+                $dropdown.addClass('loading');
+                
+                var type = $parent.data('db-type');
+                var id = $parent.data('db-id');
+                $.getJSON('/' + type + '/' + id, function(data) {
+                    $dropdown.removeClass('loading');
+                    
+                    $dropdown.html(templates['dropdown_' + type]($.extend({'data': data}, template_helpers)));
+                })
+            }
+            $dropdown.slideDown('fast');
+        }
+        return false;
+    });
+    
+    $('#filterBtn').click(function() {
+        var showing = $('input[name=view-by]:checked').val();
+        $('#' + showing + 'Filter').slideToggle('fast');
+        return false;
+    })
+    
+    $('.view-by').eq(0).change();
 })

@@ -3,6 +3,7 @@ from honorees.models import *
 import csv
 import datetime
 import sys
+from name_cleaver import OrganizationNameCleaver
 
 def extract(d, keys):
     return dict((k, d[k]) for k in keys if k in d)
@@ -22,7 +23,7 @@ class Command(BaseCommand):
                 'name': row['registrantname']
             }
             
-            registrant, created = Registrant.objects.get_or_create(**registrant_data)
+            registrant, created = Registrant.objects.get_or_create(defaults={'standardized_name': str(OrganizationNameCleaver(registrant_data['name']).parse())}, **registrant_data)
             
             honoree_data = {
                 'name': row['separate_honoree'],
