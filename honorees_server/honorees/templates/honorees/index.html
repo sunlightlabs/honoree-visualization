@@ -9,9 +9,9 @@
     <meta name="description" content="">
 
     <title></title>
-    <link rel="stylesheet" href="/media/css/honoree.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="media/css/honoree.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-	<script type="text/javascript" src="/honorees.js"></script>
+	<script type="text/javascript" src="honorees.js"></script>
 </head>
 <body id="honoreeTool">
     <div id="containerWrapper">
@@ -34,13 +34,13 @@
                         <li>
                             <label class="labelOne">Type</label>
                             <ul id="typeFilter">
-                                <li><label><input class="checkbox" type="checkbox" name="word" />All</label></li>
-                                <li><label><input class="checkbox" type="checkbox" name="word" />Congress</label></li>
+                                <li><label><input class="checkbox" type="checkbox" name="all" />All</label></li>
+                                <li><label><input class="checkbox" type="checkbox" name="congress" />Congress</label></li>
                             
-                                <li><label><input class="checkbox" type="checkbox" name="word" />Executive Branch</label></li>
-                                <li><label><input class="checkbox" type="checkbox" name="word" />Legislative Branch</label></li>
-                                <li><label><input class="checkbox" type="checkbox" name="word" />Caucus/Delegations</label></li>
-                                <li><label><input class="checkbox" type="checkbox" name="word" />Other</label></li>
+                                <li><label><input class="checkbox" type="checkbox" name="executive" />Executive Branch</label></li>
+                                <li><label><input class="checkbox" type="checkbox" name="legislative" />Legislative Branch</label></li>
+                                <li><label><input class="checkbox" type="checkbox" name="delegation" />Caucus/Delegations</label></li>
+                                <li><label><input class="checkbox" type="checkbox" name="other" />Other</label></li>
                             </ul>
                         </li>
                         <li class="nameFilter">
@@ -50,8 +50,7 @@
                         <li>
                             <label class="labelOne">State</label>
                             <select class="state" name="state">
-					            <option value="state">Select State</option>
-								<option value="alabama">Alabama</option>
+					            <option value="">Select State</option>
 							</select>
                         </li>
                         <li class="clear">

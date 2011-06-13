@@ -7,7 +7,7 @@ urlpatterns = patterns('',
     url(r'^all_honorees.json$', 'honorees.views.all_honorees'),
     url(r'^all_registrants.json$', 'honorees.views.all_registrants'),
     
-    url(r'^(?P<type>(registrant|honoree))/(?P<id>\d+)$', 'honorees.views.entity'),
+    url(r'^(?P<type>(registrant|honoree))/(?P<id>\d+).json$', 'honorees.views.entity'),
     
     url(r'^$', direct_to_template, {'template': 'honorees/index.html'}),
 )

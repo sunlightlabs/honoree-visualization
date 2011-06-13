@@ -157,8 +157,9 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 #honoreeTool td { padding: 5px; color: #918f8e;}
 
 #honoreeTool .mainAmountTable { overflow: auto; height: 472px; display: none; }
+#honoreeTool .mainAmountTable .clickable { cursor: pointer;}
 
-.loading { background: url('/media/images/loading.gif') no-repeat center center };
+.loading { background: url('../images/loading.gif') no-repeat center center };
 
 .filterDropdown span { color: #4A4244; margin-bottom: 8px; display: block; font-style: oblique;}
 .filterDropdown { position: absolute; background: #f7f7ef url('../images/bg_filter.png') left bottom repeat-x; border-bottom: 2px solid #92928d; border-top: 1px solid #babab4; font-size: 95%; padding: 5px 15px 10px; width: 550px; margin-top: 15px; left: 0; display: none; }
