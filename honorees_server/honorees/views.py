@@ -21,7 +21,8 @@ def all_honorees(request):
             'name': honoree.name,
             'party': honoree.party,
             'state': honoree.state,
-            'category': category_mappings.get(str(honoree.category), 'executive')
+            'category': category_mappings.get(str(honoree.category), 'executive'),
+            'employer': honoree.employer
         }
         for honoree in Honoree.objects.all().annotate(total_contributions=Sum('contributionhonoree__amount'), contribution_count=Count('contributionhonoree')).order_by('-total_contributions')
     ]

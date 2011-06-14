@@ -3,11 +3,11 @@
         <a class="expand expandColumn" href="#">Expand</a>
         <div class="lawmakerColumn">
             <span class="honoreeName"><%=name%></span>
-            <% if (typeof(party) !== "undefined" && typeof(state) !== "undefined" && party && state) { %>
+            <% if ((typeof(party) !== "undefined") && (typeof(state) !== "undefined") && (typeof(employer) !== "undefined")) { %>
             <div class="honoreeMetaData">
-                <span class="<%=(party == 'D' ? 'dem' : 'rep')%>"><%=party%></span>
-                <span>&ndash;</span>
-                <span><%=state%></span>
+                <% if (party) { %><span class="<%=(party == 'D' ? 'dem' : 'rep')%>"><%=party%></span><span>&ndash;</span><% } %>
+                <% if (state) { %><span><%=state%></span><% } %>
+                <% if (employer) { %><span>Employer: <%=employer%></span><% } %>
             </div>
             <% } %>
         </div>
