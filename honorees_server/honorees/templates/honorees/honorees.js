@@ -109,7 +109,7 @@ $(function() {
         var $parent = $this.parent();
         if ($parent.hasClass('active')) {
             $parent.removeClass('active');
-            $parent.find('.dropdownTable').hide();
+            $parent.find('.dropdownTable').slideUp('fast');
         } else {
             $parent.addClass('active');
             var $dropdown = $parent.find('.dropdownTable');
