@@ -5,8 +5,18 @@ import datetime
 import sys
 from name_cleaver import OrganizationNameCleaver
 
-def extract(d, keys):
-    return dict((k, d[k]) for k in keys if k in d)
+MANUAL_ORG_NAMES = {
+    "AARP": "AARP",
+    "NATIONAL WOMEN'S LAW CENTER": "National Women's Law Center",
+    "BAE SYSTEMS, INC.": "BAE Systems, Inc.",
+    "CBS CORPORATION": "CBS Corporation"
+}
+
+def standardize_organization(org):
+    if org in MANUAL_ORG_NAMES:
+        return MANUAL_ORG_NAMES[org]
+    else:
+        return str(OrganizationNameCleaver(org).parse())
 
 class Command(BaseCommand):
     args = '<csv_file>'
@@ -23,7 +33,7 @@ class Command(BaseCommand):
                 'name': row['registrantname']
             }
             
-            registrant, created = Registrant.objects.get_or_create(defaults={'standardized_name': str(OrganizationNameCleaver(registrant_data['name']).parse())}, **registrant_data)
+            registrant, created = Registrant.objects.get_or_create(defaults={'standardized_name': standardize_organization(registrant_data['name'])}, **registrant_data)
             
             honoree_data = {
                 'name': row['separate_honoree'],
