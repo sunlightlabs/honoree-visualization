@@ -59,8 +59,6 @@ button.disabled { opacity: 0.3; filter: alpha(opacity=30); -ms-filter:"progid:DX
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
 p { margin-bottom: 1.3em;}
 
-html { overflow-y: scroll; }
-
 iframe { display: block; margin: 10px 0; }
 
 a:hover, a:active { outline: none; }
