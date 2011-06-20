@@ -108,7 +108,7 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 
 #honoreeTool #containerWrapper { background: #f9f9f0 url('../images/border_bottom.png') left bottom no-repeat; width: 580px; padding-bottom: 3px; max-height: 600px;}
 #honoreeTool #container { background: url('../images/border_top.png') top left no-repeat; }
-#honoreeTool #mainFilter { font-family: Georgia, "Times New Roman", Times, serif; font-size: 110%; padding: 15px; background: url('../images/bg_filter.png') left bottom repeat-x;}
+#honoreeTool #mainFilter { font-family: Georgia, "Times New Roman", Times, serif; font-size: 110%; padding: 15px 15px 10px; background: url('../images/bg_filter.png') left bottom repeat-x;}
 #honoreeTool #mainFilter #filterTitle { float: left; color: #4a4244; text-transform: uppercase; }
 #honoreeTool #mainFilter li { float: left; margin-left: 20px;}
 
@@ -140,7 +140,8 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 #honoreeTool .odd { background-color: #fff; border: 1px solid #E8E8E8;}
 
 #honoreeTool .radio, #honoreeTool .checkbox { margin-right: 10px; margin-top: 2px; display: block; float: left;}
-#honoreeTool #filterBtn { text-align: right; display: block;}
+#honoreeTool #filterBtn { float: right; display: block; text-indent: -9999em; width: 103px; height: 21px; background: url('../images/btn_filterResults.png') right top no-repeat; }
+#honoreeTool #filterBtn:hover { background: url('../images/btn_filterResults.png') right bottom no-repeat; }
 
 #honoreeTool .tagValue { background: url('../images/bg_bar.jpg') left top repeat-x; float: left; display: block; height: 35px; margin-right: 5px; text-indent: -9999em; border: 1px solid #98c43e; max-width: 235px;}
 #honoreeTool .moneyMetaData { float: left; line-height: 14px; margin-top: 4px; }
@@ -162,7 +163,7 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 .loading { background: url('../images/loading.gif') no-repeat center center };
 
 .filterDropdown span { color: #4A4244; margin-bottom: 8px; display: block; font-style: oblique;}
-.filterDropdown { position: absolute; background: #f7f7ef url('../images/bg_filter.png') left bottom repeat-x; border-bottom: 2px solid #92928d; border-top: 1px solid #babab4; font-size: 95%; padding: 5px 15px 10px; width: 550px; margin-top: 15px; left: 0; display: none; }
+.filterDropdown { position: absolute; background: #f7f7ef url('../images/bg_filter.png') left bottom repeat-x; border-bottom: 2px solid #92928d; border-top: 1px solid #babab4; font-size: 95%; padding: 5px 15px 10px; width: 550px; margin-top: 10px; left: 0; display: none; }
 #honoreeTool #honoreeFilter li, #honoreeTool #registrantFilter li { margin-left: 0px;}
 .filterDropdown label { display: block; margin-bottom: 5px; }
 #typeFilter label { width: 170px;  }

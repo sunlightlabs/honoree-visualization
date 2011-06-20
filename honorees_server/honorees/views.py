@@ -6,12 +6,12 @@ from django.shortcuts import get_object_or_404
 
 def all_honorees(request):
     category_mappings = {
-        'E': 'executive',
+        'Executive branch': 'executive',
         'Rep/Sen': 'congress',
-        'D': 'delegation',
+        'Delegation/Caucus': 'delegation',
         '': 'other',
-        'O': 'other',
-        'L': 'legislative',
+        'Candidate': 'other',
+        'Legislative branch': 'legislative',
     }
     out = [
         {
