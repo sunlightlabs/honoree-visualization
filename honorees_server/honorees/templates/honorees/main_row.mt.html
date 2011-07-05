@@ -12,7 +12,7 @@
             <% } %>
         </div>
         <div class="amountColumn">
-            <span class="tagValue" style="width:<%=Math.round(100*(total_contributions/most))%>%;">30%</span>
+            <span class="tagValue" style="width:<%=Math.round(235*(total_contributions/most))%>px;"><%=Math.round(100*(total_contributions/most))%>%</span>
             <div class="moneyMetaData">
                 <span class="totalMoney">$<%=formatDollars(total_contributions)%></span>
                 <span class="numberPayments">(<%=contribution_count + (contribution_count == 1 ? ' payment' : ' payments')%>)</span>
