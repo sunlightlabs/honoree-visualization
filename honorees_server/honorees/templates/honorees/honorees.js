@@ -79,7 +79,7 @@ $(function() {
         
         if (table.children().length == 0) {
             table.addClass('loading');
-            $.getJSON('all_' + toShow + 's.json', function(data) {
+            $.getJSON('all_' + toShow + 's.json?d=' + NOW, function(data) {
                 var most = data[0].total_contributions;
                 table.removeClass('loading');
                 $.each(data, function(idx, row) {
@@ -118,7 +118,7 @@ $(function() {
                 
                 var type = $parent.data('db-type');
                 var id = $parent.data('db-id');
-                $.getJSON(type + '/' + id + '.json', function(data) {
+                $.getJSON(type + '/' + id + '.json?d=' + NOW, function(data) {
                     $dropdown.removeClass('loading');
                     
                     $dropdown.html(templates['dropdown_' + type]($.extend({'data': data}, template_helpers)));
