@@ -178,3 +178,5 @@ input { -moz-border-radius: 3px; -webkit-border-radius: 3px; border: 1px solid #
 
 #honoreeFilter .btnFilter { margin-top: 15px;}
 #registrantFilter .btnFilter { margin-top: 1px;}
+
+#dataDictionary { float: right; margin-right: 15px; margin-top: 15px; font-size: 95%; text-transform: lowercase;}

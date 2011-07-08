@@ -1,0 +1,46 @@
+Data dictionary for Lobbyist Contribution Reports Database
+
+Notes: For a contribution report that lists multiple honorees, we have divided the contribution amounts equally between the honorees and put them on their own rows. 
+       To aggregate the total amount of money donated for each honoree or from each lobbying registrant, use the 'divided_amount' field
+
+year: The year the report corresponds to.
+
+received: Date report was received.
+
+type: The 6-month reporting period the report corresponds to.
+
+registrantid: The lobbying registrant's id number with the Senate secretary.
+
+registrantname: Lobbying registrant's name.
+
+lobbyistname: When this field is filled out, the report was made by an individual lobbyist.
+
+contributor: This field is usually the same as the registrant's name. However, in some cases an individual lobbyist is the contributor.
+
+contributiontype: This field either says 'honorary expenses' or 'meeting expenses.' The former covers many kinds of gifts. The latter is usually a sponsorship of a conference, meeting or retreat held by or in the name of a covered official. 
+
+honoree_LD203form: What the lobbyists wrote in the 'honoree' section of their LD-203 reports.
+
+honoree_cleanedup: [Sunlight-created field] Names have been standardized, positions have been added, and other information removed from the 'honoree_LD203form' field.
+
+payee: The entity that received the contribution.
+
+amount: The amount of the contribution.
+
+contributiondate: The contribution date.
+
+comments: Notes from the 'comment' section of the LD-203 forms.
+
+separate_honoree: [Sunlight-created field] Each honoree listed in the reports; the field was created by splitting off all the honorees listed in each individual report.
+
+separate_honoree_category: [Sunlight-created field] The occupation of the honoree. The possible categories are:
+	Rep/Sen
+	Executive branch
+	Legislative branch
+	Caucus/Delegation
+	Candidate (the law does not actually mandate disclosure of honorary payments to candidates)
+	Blank (records where it is difficult to determine who is being honored or the honoree is not covered by the law)
+
+divided_amount: [Sunlight-created field] The amount of the contribution, if it was divided equally among all the honorees listed.
+
+staffer_employer: [Sunlight-created field] The member of Congress or Committee who employs a legislative branch aide. 
